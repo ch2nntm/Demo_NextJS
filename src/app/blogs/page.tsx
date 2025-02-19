@@ -17,7 +17,7 @@ const BlogsPage = () => {
   return (
     <div className="mt-3">
       <AppTable
-        blogs={data?.sort((a: any, b: any) => b.id - a.id) ?? []}
+        blogs={data?.sort((a, b) => b.id - a.id) ?? []}
       ></AppTable>
     </div>
   );
