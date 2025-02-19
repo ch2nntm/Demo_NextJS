@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Card } from "react-bootstrap";
 import useSWR, { Fetcher } from "swr";
+import { PageProps } from "next";
 
 interface IBlog {
   id: string;
@@ -11,7 +12,7 @@ interface IBlog {
   content: string;
 }
 
-const ViewDetail = ({ params }: { params: { id: string } }) => {
+const ViewDetail = ({ params }: PageProps<{ id: string }>) => {
   const fetcher: Fetcher<IBlog, string> = (url) =>
     fetch(url).then((res) => res.json());
 
